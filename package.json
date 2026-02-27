@@ -1,0 +1,21 @@
+{
+  "name": "silent-signal-server",
+  "version": "1.0.0",
+  "description": "Signaling server for The Silent Signal app",
+  "main": "signaling-server.js",
+  "scripts": {
+    "start": "node signaling-server.js",
+    "dev": "nodemon signaling-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
