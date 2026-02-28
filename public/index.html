@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Love App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fda4af 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,105,180,0.3), transparent);
+            animation: glowPulse 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .glow-1 { top: -100px; left: -100px; }
+        .glow-2 { bottom: -100px; right: -100px; animation-delay: 1.5s; }
+
+        @keyframes glowPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.3); opacity: 0.8; }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart-icon {
+            font-size: 80px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 25px rgba(255,20,147,0.4));
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.15); }
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 32px;
+            margin-top: 20px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.15);
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            margin-top: 8px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .status {
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 14px 35px;
+            border-radius: 50px;
+            margin-top: 35px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.35);
+            animation: fadeInUp 1s ease 0.5s both;
+            box-shadow: 0 8px 32px rgba(255,105,180,0.2);
+        }
+
+        .floating-heart {
+            position: fixed;
+            animation: floatUp linear infinite;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+                transform: translateY(85vh) rotate(30deg) scale(1);
+            }
+            90% { opacity: 0.3; }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <div class="container">
+        <div class="heart-icon">💕</div>
+        <h1>Love App</h1>
+        <p class="subtitle">Made with love, for love</p>
+        <div class="status">✅ Connection Successful!</div>
+    </div>
+
+    <script>
+        const hearts = ['❤️','💕','💖','💗','💝','💘','💓','💞','🩷'];
+
+        function createHeart() {
+            const h = document.createElement('div');
+            h.className = 'floating-heart';
+            h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.fontSize = (Math.random() * 22 + 10) + 'px';
+            h.style.animationDuration = (Math.random() * 6 + 6) + 's';
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 13000);
+        }
+
+        for (let i = 0; i < 12; i++) setTimeout(createHeart, i * 250);
+        setInterval(createHeart, 700);
+    </script>
+</body>
+</html>
