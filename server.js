@@ -59,8 +59,8 @@ const Meme = mongoose.model('Meme', new mongoose.Schema({
 async function seedData() {
     try {
         if (await User.countDocuments() === 0) {
-            const h1 = await bcrypt.hash('cavity123', 10);
-            const h2 = await bcrypt.hash('cingam123', 10);
+            const h1 = await bcrypt.hash('Cavity1109', 10);
+            const h2 = await bcrypt.hash('Cingam0000', 10);
             await User.create([
                 { username: 'cavity', password: h1, displayName: 'Cavity' },
                 { username: 'cingam', password: h2, displayName: 'Cingam' }
