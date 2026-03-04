@@ -72,14 +72,14 @@ async function seedData() {
                 { addedBy: 'system', quote: 'Every love story is beautiful, but ours is my favorite' },
                 { addedBy: 'system', quote: 'In a sea of people, my eyes will always search for you' },
                 { addedBy: 'system', quote: 'You are my today and all of my tomorrows', author: 'Leo Christopher' },
-                { addedBy: 'system', quote: 'I fell in love the way you fall asleep: slowly, then all at once', author: 'John Green' },
-                { addedBy: 'system', quote: 'My heart is and always will be yours', author: 'Jane Austen' },
+                { addedBy: 'system', quote: 'I fell in love the way No one ever felt' },
+                { addedBy: 'system', quote: 'Everything of Mine Belongs to You' },
                 { addedBy: 'system', quote: 'You are my sun, my moon, and all my stars', author: 'E.E. Cummings' },
                 { addedBy: 'system', quote: 'Together is my favorite place to be' },
                 { addedBy: 'system', quote: 'Some hearts understand each other even in silence' },
-                { addedBy: 'system', quote: 'I choose you. And I will choose you over and over' },
-                { addedBy: 'system', quote: 'Whatever our souls are made of, his and mine are the same', author: 'Emily Bronte' },
-                { addedBy: 'system', quote: 'If I know what love is, it is because of you', author: 'Hermann Hesse' },
+                { addedBy: 'system', quote: 'I choosen you tomorrow.I choose you today and I will choose you tomorrow also' },
+                { addedBy: 'system', quote: 'Whatever our souls are made of, her and mine are the same', author: 'Emily Bronte' },
+                { addedBy: 'system', quote: 'If I know what love is, it is after falling for you ' },
                 { addedBy: 'system', quote: 'To love and be loved is to feel the sun from both sides', author: 'David Viscott' }
             ]);
             console.log('Quotes seeded');
